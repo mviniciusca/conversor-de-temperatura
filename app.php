@@ -10,7 +10,7 @@
 
 # Atalhos: k - kelvin / c - celsius / f - fahrenheit
 # Lógica:
-#acao = temperatura  <= ação => escala de origem: 32 graus Celsius ou 92 graus Fahrenheit; resultado: escala desejada.
+# acao = temperatura  <= ação => escala de origem: 32 graus Celsius ou 92 graus Fahrenheit; resultado: escala desejada.
 
 # Nota do Desafio:
 # as conversões entre as escalas k e f podem ser realizadas atraves da conversão para a escala celsius; 
@@ -19,28 +19,34 @@
 
 function converteTemperatura ($temperatura, $escalaOrigem, $escalaDesejada) {
 
+     // Declarando variáveis 
+     $k = 'kelvin';
+     $f = 'fahrenheit';
+     $c = 'celsius';
+
+     
      // Celsius para Kelvin
-     if ($escalaOrigem == 'celsius' and $escalaDesejada == 'kelvin'){
+     if ($escalaOrigem == $c && $escalaDesejada == $k){
           $temperatura = $temperatura + 273.15;
          return $temperatura;
      } 
      // Kelvin para celsius
-     if ($escalaOrigem == 'kelvin' and $escalaDesejada == 'celsius') {
+     if ($escalaOrigem == $k && $escalaDesejada == $c){
           $temperatura = $temperatura - 273.15;
           return $temperatura;
      }
      // Celsius para fahrenheit
-     if ($escalaOrigem == 'celsius' and $escalaDesejada == 'fahrenheit'){
+     if ($escalaOrigem == $c && $escalaDesejada == $f){
           $temperatura = ($temperatura * 1.8) + 32;
           return $temperatura; 
      }
      // fahrenheit para celsius 
-     if ($escalaOrigem == 'fahrenheit' and $escalaDesejada == 'celsius'){
+     if ($escalaOrigem == $f && $escalaDesejada == $c){
           $temperatura = ( -32 + $temperatura) / 1.8;
           return $temperatura;
      }
      // Kelvin para Fahrenheit
-     if ($escalaOrigem == 'kelvin' and $escalaDesejada == 'fahrenheit'){
+     if ($escalaOrigem == $k && $escalaDesejada == $f){
 
           #trasnforma o kelvin em celsius e depois o celsius em fahrenheit
 
@@ -49,7 +55,7 @@ function converteTemperatura ($temperatura, $escalaOrigem, $escalaDesejada) {
           return $temperatura; 
      }     
       // Fahrenheit para Kelvin 
-      if ($escalaOrigem == 'fahrenheit' and $escalaDesejada == 'kelvin'){
+      if ($escalaOrigem == $f && $escalaDesejada == $k){
      
           #trasnforma fahrenheit em celsius e depois o celsius em kelvin
 
@@ -59,5 +65,5 @@ function converteTemperatura ($temperatura, $escalaOrigem, $escalaDesejada) {
       }
 
 }
-converteTemperatura ($temperatura, $escalaOrigem, $escalaDesejada);
+converteTemperatura ($temperatura, $escalaOrigem, $escalaDesejada); // chama a função
 
