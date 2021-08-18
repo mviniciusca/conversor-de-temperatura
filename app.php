@@ -25,32 +25,31 @@ function converteTemperatura ($temperatura, $escalaOrigem, $escalaDesejada) {
          return $temperatura;
      } 
      // Kelvin para celsius
-     elseif ($escalaOrigem == 'kelvin' and $escalaDesejada == 'celsius') {
+     if ($escalaOrigem == 'kelvin' and $escalaDesejada == 'celsius') {
           $temperatura = $temperatura - 273.15;
           return $temperatura;
      }
      // Celsius para fahrenheit
-     elseif ($escalaOrigem == 'celsius' and $escalaDesejada == 'fahrenheit'){
+     if ($escalaOrigem == 'celsius' and $escalaDesejada == 'fahrenheit'){
           $temperatura = ($temperatura * 1.8) + 32;
           return $temperatura; 
      }
      // fahrenheit para celsius 
-     elseif ($escalaOrigem == 'fahrenheit' and $escalaDesejada == 'celsius'){
+     if ($escalaOrigem == 'fahrenheit' and $escalaDesejada == 'celsius'){
           $temperatura = ( -32 + $temperatura) / 1.8;
           return $temperatura;
      }
      // Kelvin para Fahrenheit
-     elseif ($escalaOrigem == 'kelvin' and $escalaDesejada == 'fahrenheit'){
+     if ($escalaOrigem == 'kelvin' and $escalaDesejada == 'fahrenheit'){
 
           #trasnforma o kelvin em celsius e depois o celsius em fahrenheit
 
           $temperatura = $temperatura - 273.15; // saída em celsius
           $temperatura = ($temperatura * 1.8) + 32; // saída em fahrenheit
           return $temperatura; 
-     }
-     
+     }     
       // Fahrenheit para Kelvin 
-      elseif ($escalaOrigem == 'fahrenheit' and $escalaDesejada == 'kelvin'){
+      if ($escalaOrigem == 'fahrenheit' and $escalaDesejada == 'kelvin'){
      
           #trasnforma fahrenheit em celsius e depois o celsius em kelvin
 
